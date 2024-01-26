@@ -1,7 +1,66 @@
 body {
+    position: relative;
+    margin: 0px;
+    font-family: 'Ubuntu', Times;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+.fa-chess-board {
+    font-size: 48px;
+}
+
+.container {
     display: grid;
-    grid-template-areas: "sidebar header"
-                         "sidebar container";
-    grid-template-rows: 15% 85%;
-    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "aside header"
+                         "aside content";
+    grid-template-columns: 300px auto;
+}
+
+aside, header, main {
+    padding: 16px;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #222831;
+    color: #f2f2f2;
+    font-size: 20px;
+    display: grid;
+    justify-content: start;
+    align-content: start;
+    grid-gap: 2px;
+}
+
+aside .aside-item {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 4fr;
+    justify-items: start;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+
+ul, a, a:active, a:hover, a:visited {
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    grid-area: header;
+    background-color: #f96d00;
+}
+
+main {
+    grid-area: content;
+    background-color: #f2f2f2;
 }
