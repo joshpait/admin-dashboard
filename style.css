@@ -1,0 +1,7 @@
+body {
+    display: grid;
+    grid-template-areas: "sidebar header"
+                         "sidebar container";
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 1fr 6fr;
+}
