@@ -13,7 +13,11 @@ h2 {
 }
 
 .fa-chess-board {
-    font-size: 48px;
+    font-size: 24px;
+}
+
+.fa-magnifying-glass {
+    font-weight: bolder;
 }
 
 .container {
@@ -27,11 +31,14 @@ aside, header, main {
     padding: 16px;
 }
 
+/* - - - ASIDE - - - */
+
 aside {
     grid-area: aside;
     background-color: #222831;
     color: #f2f2f2;
     font-size: 20px;
+    padding-left: 32px;
     display: grid;
     justify-content: start;
     align-content: start;
@@ -47,6 +54,97 @@ aside .aside-item {
     grid-gap: 16px;
 }
 
+/* - - - HEADER - - - */
+
+header {
+    grid-area: header;
+    background-color: #f96d00;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 0.5fr 1fr;
+    padding: 12px 20px 12px 20px;
+}
+
+.header-item {
+    display: grid;
+    align-items: center;
+}
+
+.header-1 {
+    margin-left: 32px;
+}
+
+a.search-btn {
+    margin-right: 8px;
+}
+
+button.search-btn, button.notification-btn {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+input.search-bar, input:focus.search-bar {
+    height: 20px;
+    width: 700px;
+    border-radius: 16px;
+    background-color: #f2f2f2;
+    border: none;
+    outline: #f2f2f2;
+    padding: 8px 23px 8px 30px;
+    margin: 4px;
+    line-height: 8px;
+}
+
+.header-2 {
+    margin-right: 16px;
+    padding-right: 64px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.header-3 {
+    margin-left: 32px;
+    display: grid;
+    column-gap: 16px;
+    row-gap: 0;
+    justify-content: start;
+}
+
+.header-3 .header-logo {
+    grid-row: span 2;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile {
+    width: 4em;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+p.welcome {
+    display: grid;
+    grid-area: 1/2/1/2;
+    align-items: end;
+    font-weight: bolder;
+}
+
+h1.author {
+    display: grid;
+    grid-area: 2/2/2/2;
+    align-items: center;
+}
+
 
 ul, a, a:active, a:hover, a:visited {
     padding: 0;
@@ -55,12 +153,30 @@ ul, a, a:active, a:hover, a:visited {
     color: inherit;
 }
 
-header {
-    grid-area: header;
-    background-color: #f96d00;
+.header-4 {
+    margin-right: 16px;
+}
+
+.header-4 .header-links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 16px;
+}
+
+.header-4 .header-links button {
+    width: 7em;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #222831;
+    outline: #222831;
+    border: none;
+    color:#f2f2f2;
+    font-size: 16px;
 }
 
 main {
     grid-area: content;
     background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
 }
