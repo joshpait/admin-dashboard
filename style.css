@@ -20,7 +20,7 @@ h2 {
     font-weight: bolder;
 }
 
-.container {
+.master-container {
     display: grid;
     grid-template-areas: "aside header"
                          "aside content";
@@ -68,7 +68,6 @@ header {
 .header-item {
     display: grid;
     align-items: center;
-    border: 1px black solid;
 }
 
 .header-1 {
@@ -182,9 +181,96 @@ ul, a, a:active, a:hover, a:visited {
     font-size: 16px;
 }
 
+/* - - - CONTENT - - - */
+
 main {
     grid-area: content;
     background-color: #f2f2f2;
     display: grid;
-    grid-template-columns: 4fr 1fr;
+    grid-template-columns: 3fr 1fr;
+}
+
+.main-wrapper {
+    border: 1px black solid;
+    column-gap: 16px;
+    row-gap: 16px;
+}
+
+.main-wrapper.left{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 4em repeat(3, 1fr);
+    justify-items: left;
+    margin-right: 16px;
+}
+
+.main-item.left {
+    border: 1px black solid;
+    border-radius: 1em;
+    border-left: 1em #f96d00 solid;
+    width: 20em;
+    padding: 16px;    
+    height: auto;
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    justify-content: left;
+}
+
+div.main-btns {
+    width: 20em;
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+}
+
+.main-wrapper.left .title {
+    margin-bottom: 0;
+    grid-column-end: span 2;
+    justify-self: left;
+    justify-content: left;
+}
+
+.main-wrapper.left .title ,
+.main-wrapper.right .title {
+    margin-bottom: 0;
+    justify-self: left;
+    justify-content: left;
+    border: none;
+    color: #222831;
+}
+
+.main-wrapper.right .container {
+    border: 1px black solid;
+    border-radius: 1em;
+}
+
+.main-wrapper.right {
+    display: grid;
+    width: 100%;
+    grid-template-rows: min-content max-content min-content max-content;
+    justify-items: center;
+}
+
+.main-item.right {
+    border: 1px black solid;
+    border-radius: 1em;
+    padding: 16px;
+    height: auto;
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    justify-content: left;
+}
+
+.main-item.container .right {
+    border: 1px black solid;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+.main-item.container .item-content.trending {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
 }
