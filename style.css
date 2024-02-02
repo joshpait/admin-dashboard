@@ -24,7 +24,7 @@ h2 {
     display: grid;
     grid-template-areas: "aside header"
                          "aside content";
-    grid-template-columns: 300px auto;
+    grid-template-columns: 1fr 5fr;
 }
 
 aside, header, main {
@@ -62,16 +62,18 @@ header {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 0.5fr 1fr;
-    padding: 12px 20px 12px 20px;
+    padding: 12px 12px;
 }
 
 .header-item {
     display: grid;
     align-items: center;
+    border: 1px black solid;
 }
 
 .header-1 {
     margin-left: 32px;
+    width: 80%;
 }
 
 a.search-btn {
@@ -90,7 +92,7 @@ button.search-btn, button.notification-btn {
 
 input.search-bar, input:focus.search-bar {
     height: 20px;
-    width: 700px;
+    width: 500px;
     border-radius: 16px;
     background-color: #f2f2f2;
     border: none;
@@ -101,19 +103,24 @@ input.search-bar, input:focus.search-bar {
 }
 
 .header-2 {
-    margin-right: 16px;
-    padding-right: 64px;
+    margin-right: 32px;
+    padding-right: 32px;
     display: flex;
-    justify-content: flex-end;
+    justify-content:flex-end;
     gap: 24px;
+}
+
+.header-3, .header-4 {
+    margin: 16px auto;
 }
 
 .header-3 {
     margin-left: 32px;
+    width: 50%;
     display: grid;
     column-gap: 16px;
-    row-gap: 0;
     justify-content: start;
+    grid-template-columns: 1fr 9fr;
 }
 
 .header-3 .header-logo {
@@ -130,18 +137,19 @@ input.search-bar, input:focus.search-bar {
     align-items: center;
 }
 
-
-
-p.welcome {
+div.welcome {
     display: grid;
-    grid-area: 1/2/1/2;
-    align-items: end;
-    font-weight: bolder;
+    align-content: center;
 }
 
-h1.author {
-    display: grid;
-    grid-area: 2/2/2/2;
+p.welcome {
+    align-items: end;
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+span.author {
+    font-size: 24px;
     align-items: center;
 }
 
@@ -154,7 +162,7 @@ ul, a, a:active, a:hover, a:visited {
 }
 
 .header-4 {
-    margin-right: 16px;
+    margin-right: 32px;
 }
 
 .header-4 .header-links {
