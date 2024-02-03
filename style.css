@@ -1,6 +1,6 @@
 body {
     position: relative;
-    margin: 0px;
+    margin: 0;
     font-family: 'Ubuntu', Times;
 }
 
@@ -27,7 +27,7 @@ h2 {
     grid-template-columns: 1fr 5fr;
 }
 
-aside, header, main {
+aside, header {
     padding: 16px;
 }
 
@@ -190,22 +190,25 @@ main {
     grid-template-columns: 3fr 1fr;
 }
 
-.main-wrapper {
-    border: 1px black solid;
-    column-gap: 16px;
-    row-gap: 16px;
+.main-wrapper.left {
+    padding-left: 1em;
+}
+
+.main-wrapper.right {
+    padding-right: 2em;
+    padding-bottom: 2em;
 }
 
 .main-wrapper.left{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 4em repeat(3, 1fr);
+    grid-template-rows: 4em repeat(3, min-content);
     justify-items: left;
-    margin-right: 16px;
+    column-gap: 1em;
+    row-gap: 2em;
 }
 
 .main-item.left {
-    border: 1px black solid;
     border-radius: 1em;
     border-left: 1em #f96d00 solid;
     width: 20em;
@@ -216,11 +219,25 @@ main {
     justify-content: left;
 }
 
+div.main-item.left {
+    box-shadow: 4px 2px 8px lightslategray;
+}
+
 div.main-btns {
     width: 20em;
     display: flex;
     justify-content: end;
     gap: 16px;
+}
+
+.main-btns > button {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .main-wrapper.left .title {
@@ -232,33 +249,52 @@ div.main-btns {
 
 .main-wrapper.left .title ,
 .main-wrapper.right .title {
-    margin-bottom: 0;
     justify-self: left;
     justify-content: left;
     border: none;
     color: #222831;
-}
-
-.main-wrapper.right .container {
-    border: 1px black solid;
-    border-radius: 1em;
+    padding-left: 16px;
 }
 
 .main-wrapper.right {
     display: grid;
-    width: 100%;
-    grid-template-rows: min-content max-content min-content max-content;
-    justify-items: center;
+    grid-template-rows: repeat(4, min-content);
 }
 
-.main-item.right {
+.main-wrapper.right .container {
+    border-radius: 1em;
+    padding: 20px;
+    justify-content: left;
+    box-shadow: 4px 2px 8px lightslategray;
+}
+
+.main-item.container .item-content.trending {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-content.announcements > h3,
+.item-content.trending > div > h3 {
+    font-size: 16px;
+}
+
+.item-content.announcements > p,
+.item-content.trending > div > p {
+    font-size: 12px;
+}
+
+
+/* .main-item .right {
     border: 1px black solid;
     border-radius: 1em;
     padding: 16px;
     height: auto;
     display: grid;
     grid-template-rows: 1fr min-content;
-    justify-content: left;
+    justify-content: center;
 }
 
 .main-item.container .right {
@@ -268,9 +304,5 @@ div.main-btns {
     justify-content: center;
 }
 
-.main-item.container .item-content.trending {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    justify-content: center;
-}
+
+} */
